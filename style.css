@@ -1,0 +1,178 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 85%;
+}
+
+.game {
+    background-color: aquamarine;
+    display: flex;
+}
+
+.guessed-word {
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 1px solid red;
+}
+
+.letter {
+    width: 50px;
+    height: 25px;
+    border-bottom: 1px solid blue;
+    text-align: center;
+}
+
+.letter+.letter {
+    margin-left: 15px;
+}
+
+.score-tracking {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    border: 2px solid red;
+}
+
+.hangman {
+    height: 450px;
+}
+
+.gallow {
+    position: relative;
+    left: 50px
+}
+
+.human {
+    position: relative;
+    left: 50px;
+}
+
+.vertical-part {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 10px;
+    height: 250px;
+    background-color: black;
+}
+
+.horizontal-part {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 150px;
+    height: 10px;
+    background-color: black;
+}
+
+.cross-part {
+    position: absolute;
+    left: 45px;
+    top: 70px;
+    width: 60px;
+    height: 10px;
+    transform: rotate(-45deg);
+    background-color: black;
+}
+
+.hill {
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    border: 5px solid black;
+    border-top-left-radius: 90px;
+    border-top-right-radius: 90px;
+    top: 300px;
+    left: -15px;
+}
+
+.rope {
+    position: absolute;
+    top: 50px;
+    left: 200px;
+    width: 5px;
+    height: 50px;
+    background-color: black;
+}
+
+.head {
+    position: absolute;
+    border: 6px solid black;
+    width: 35px;
+    height: 35px;
+    border-radius: 90px;
+    top: 95px;
+    left: 185px;
+}
+
+.body {
+    position: absolute;
+    width: 7px;
+    height: 100px;
+    top: 130px;
+    left: 200px;
+    background-color: black;
+}
+
+.appendage {
+    position: absolute;
+    width: 8px;
+    height: 50px;
+    background-color: black;
+}
+
+.arm-left {
+    top: 140px;
+    left: 182px;
+    transform: rotate(-45deg);
+}
+
+.arm-right {
+    top: 140px;
+    left: 218px;
+    transform: rotate(45deg);
+}
+
+.leg-right {
+    top: 217px;
+    left: 182px;
+    transform: rotate(-135deg);
+}
+
+.leg-left {
+    top: 217px;
+    left: 218px;
+    transform: rotate(135deg);
+}
+
+.keys {
+    display: flex;
+    width: 100%;
+    border: 1px solid black;
+    justify-content: space-evenly
+}
+
+.key {
+    margin-block: 5px;
+    padding: 1em;
+    border: 1px solid green;
+}
+
+@media(max-width: 750px) {
+    .game {
+        flex-direction: column;
+    }
+}
