@@ -14,7 +14,8 @@ body {
 }
 
 .invisible {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .game {
@@ -62,6 +63,10 @@ body {
 .human {
     position: relative;
     left: 50px;
+}
+
+.element {
+    transition: all ease-in 0.5s;
 }
 
 .vertical-part {
