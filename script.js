@@ -4,6 +4,7 @@ const testWordArray = testWord.split("");
 const guessedWord = document.querySelector('.guessed-word');
 const usedLetters = document.querySelector('.used-letters');
 let guessedLetters = [];
+const drawingOrder = [".vertical-part", ".horizontal-part", ".cross-part", ".rope", ".head", ".body", ".arm-left", ".arm-right", ".leg-left", ".leg-right"];
 
 function prepareWord(word) {
     for (let index = 0; index < word.length; index++) {
@@ -20,6 +21,9 @@ function checkLetter(wordArray, keypress) {
         if (testWordArray[index] === keypress) {
             positions.push(index);
         }
+    }
+    if (positions.length === 0) {
+        positions = false;
     }
     return {
         "letter": keypress,
@@ -41,6 +45,10 @@ document.addEventListener('keypress', (e) => {
             letterToUpdate.textContent = letterInfo.letter;
         }
     }
+    if (!letterInfo.positions && !guessedLetters.includes(letterInfo.letter)) {
+        let newItem = document.querySelector(drawingOrder.shift());
+        newItem.classList.toggle('invisible')
+    };
     if (!guessedLetters.includes(letterInfo.letter)) {
         guessedLetters.push(letterInfo.letter);
         usedLetters.textContent = guessedLetters;

@@ -13,6 +13,10 @@ body {
     max-width: 85%;
 }
 
+.invisible {
+    display: none;
+}
+
 .game {
     background-color: aquamarine;
     display: flex;
