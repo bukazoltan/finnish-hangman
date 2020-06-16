@@ -31,7 +31,7 @@ export const finnishAlphabet = {
 }
 
 export function findKeyCode(dictionary, key) {
-    for (var item in finnishAlphabet) {
+    for (var item in dictionary) {
         if (finnishAlphabet[item] === key) {
             return item;
         }

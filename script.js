@@ -41,17 +41,18 @@ document.addEventListener('keypress', (e) => {
         for (let index = 0; index < letterInfo.positions.length; index++) {
             let position = letterInfo.positions[index];
             let letterToUpdate = document.getElementById(`letter-${position}`);
-            console.log(letterToUpdate);
+
             letterToUpdate.textContent = letterInfo.letter;
         }
     }
     if (!letterInfo.positions && !guessedLetters.includes(letterInfo.letter)) {
-        let newItem = document.querySelector(drawingOrder.shift());
-        newItem.classList.toggle('invisible')
+        if (drawingOrder.length) {
+            let newItem = document.querySelector(drawingOrder.shift());
+            newItem.classList.toggle('invisible');
+        }
     };
     if (!guessedLetters.includes(letterInfo.letter)) {
         guessedLetters.push(letterInfo.letter);
         usedLetters.textContent = guessedLetters;
-        console.log(guessedLetters);
     }
 });
